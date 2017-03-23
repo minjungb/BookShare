@@ -5,11 +5,12 @@
     <script src="js/jquery-3.2.0.js"></script>
     <script src="js/bootstrap.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/mainstyle.css"/>
     <meta name="viewpoint" content="width=device-width", initial-scale="1"/>
     <meta charset="UTF-8">
     <title>Book Share Sample Site</title>
 </head>
-<body style="font-family: 'Raleway'; background-color:#DED29E">
+<body>
     <!-- Navigation bar on top -->
     <!--@TODO Make header appear on mobile devices, fix weird nav menu on smaller screens. -->
     <nav class="navbar navbar-default navbar-fixed-top" style="margin-bottom:0">
@@ -20,15 +21,17 @@
 
             <!--@TODO Replace # with links to appropriate pages-->
             <ul class="nav navbar-nav navbar-left">
-                <li><a href="#">Available Books</a></li>
-                <li><a href="#">List a Book</a></li>
+                <li><a href="findbook.html">Available Books</a></li>
+                <li><a href="newpost.html">List a Book</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="register.html">Register</a></li>
+                <li><a href="login.html">Login</a></li>
             </ul>
         </div>
     </nav>
+
+    
     <!-- Header for main page -->
     <div style="background-color: #B3A580; color: #685642; text-align:center" class="jumbotron">
         <h1>BookShare.</h1>
@@ -37,6 +40,7 @@
         <button type="button" class="btn btn-warning">Learn more</button>
     </div>
 
+    
     <!-- Image Carousel -->
     <div class="row">
         <div class="col-md-6" style="text-align:center">
@@ -116,7 +120,7 @@
 
     </div>
 
-
+  
 
 </body>
 </html>
