@@ -5,7 +5,7 @@ $("#loginBtn").click(function(){
 		type: "POST",
 		url: loginServlet,
 		contentType: "text/plain",
-		dataType: "text",
+		dataType: "text", 
 		data : {
 			username : username,
 			password : password
