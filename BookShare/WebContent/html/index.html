@@ -4,6 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <script src="js/jquery-3.2.0.js"></script>
     <script src="js/bootstrap.js"></script>
+    <script src="js/login.js"></script>
     <link rel="stylesheet" href="css/bootstrap.css"/>
     <meta name="viewpoint" content="width=device-width", initial-scale="1"/>
     <meta charset="UTF-8">
@@ -34,17 +35,18 @@
         <h1>BookShare.</h1>
         <h4>Share books, make money</h4>
         <br/>
+        <div id="errorMessage"></div>
         <form action="index.html">
             <div class="container">
                 <label><b>Username</b></label>
-                <input type="text" placeholder="Username" name="username" required>
+                <input type="text" placeholder="Username" name="username" id="username" required>
                 <br/><br/>
                 <label><b>Password</b></label>
-                <input type="password" placeholder="Password" name="password" required>
+                <input type="password" placeholder="Password" name="password" id="password" required>
                 <br/><br/>
                 <button type="submit" class="btn btn-warning">Login</button>
                 <br/><br/>
-                <a href="register.html"><button type="button" class="btn btn-warning" style="font-size:9px">Don't have a Login? Register Here</button></a>
+                <a href="register.html"><button type="button" class="btn btn-warning" id="loginBtn"style="font-size:9px">Don't have a Login? Register Here</button></a>
             </div>
         </form>
     </div>
