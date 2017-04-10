@@ -8,4 +8,4 @@ $(document).ready(function(){
 	  		   '</div>';
     $('#postings').append(html);
   }
-});
+}); 
