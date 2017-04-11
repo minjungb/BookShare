@@ -4,7 +4,7 @@ $(document).ready(function(){
 		var password = $('#password').val();
 		$.ajax({
 			type: 'POST',
-			url: LoginServlet,
+			url: 'http://localhost:8080/BookShare/LoginServlet',
 			dataType: 'text', 
 			data : {
 				username : username,

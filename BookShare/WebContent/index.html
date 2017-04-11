@@ -35,8 +35,7 @@
         <h1>BookShare.</h1>
         <h4>Share books, make money</h4>   
         <br/>
-        <span id="errorMessage"></span> 
-        <form id="test" action="LoginServlet" method="post">
+        <div id="errorMessage"></div> 
             <div class="container">
                 <label><b>Username</b></label>
                 <input type="text" placeholder="Username" name="username" id="username" required>
@@ -44,11 +43,10 @@
                 <label><b>Password</b></label>
                 <input type="password" placeholder="Password" name="password" id="password" required>
                 <br/><br/>
-                <button type="submit" class="btn btn-warning">Login</button>
+                <button type="submit" id="loginBtn" class="btn btn-warning">Login</button>
                 <br/><br/>
-                <a href="register.html"><button type="button" class="btn btn-warning" id="loginBtn"style="font-size:9px">Don't have a Login? Register Here</button></a>
+                <a href="register.html"><button type="button" class="btn btn-warning" style="font-size:9px">Don't have a Login? Register Here</button></a>
             </div>
-        </form>
     </div>
 
 

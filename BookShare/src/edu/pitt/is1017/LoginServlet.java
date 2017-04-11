@@ -34,7 +34,6 @@ public class LoginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.setContentType("text/plain");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
 		
@@ -43,14 +42,9 @@ public class LoginServlet extends HttpServlet {
 		}else if(username != null){
 			System.out.println("success");
 		}
+		response.setContentType("text/plain");
 		PrintWriter out = response.getWriter();
-		
 		out.print("Hello");
-		
-		/*
-		String message = "Hello";
-		response.getWriter().write(message);
-		*/
 		
 	}
 
