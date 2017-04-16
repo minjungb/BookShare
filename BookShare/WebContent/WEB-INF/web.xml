@@ -9,7 +9,6 @@
     <welcome-file>default.htm</welcome-file>
     <welcome-file>default.jsp</welcome-file>
   </welcome-file-list>
-  
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>edu.pitt.is1017.LoginServlet</servlet-class>
@@ -18,13 +17,12 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet>
-  	<servlet-name>PostServlet</servlet-name>
-  	<servlet-class>edu.pitt.is1017.PostServlet</servlet-class>
+    <servlet-name>PostServlet</servlet-name>
+    <servlet-class>edu.pitt.is1017.PostServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>PostServlet</servlet-name>
-  	<url-pattern>/PostServlet</url-pattern>
+    <servlet-name>PostServlet</servlet-name>
+    <url-pattern>/PostServlet</url-pattern>
   </servlet-mapping>
 </web-app>

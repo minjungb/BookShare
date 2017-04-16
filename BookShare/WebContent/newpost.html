@@ -5,6 +5,7 @@
 	rel="stylesheet">
 <script src="./js/jquery-3.2.0.js"></script>
 <script src="./js/bootstrap.js"></script>
+<script src="./js/newpost.js"></script>
 <link rel="stylesheet" href="./css/bootstrap.css" />
 <link rel="stylesheet" href="./css/mainstyle.css" />
 <meta name="viewpoint" content="width=device-width" , initial-scale="1" />
@@ -21,24 +22,16 @@
 
 			<!--@TODO Replace # with links to appropriate pages-->
 			<ul class="nav navbar-nav navbar-left">
-				<li><a href="findbook.html">Available Books</a></li>
+				<li><a href="postings.html">Available Books</a></li>
 				<li><a href="newpost.html">List a Book</a></li>
 			</ul>
 			<ul class="nav navbar-nav navbar-right">
-				<li><a href="register.html">Register</a></li>
-				<li><a href="login.html">Login</a></li>
+				<li><a href="index.html">Login</a></li>
 			</ul>
 		</div>
 	</nav>
 
 	<div class="container-fluid" id="content">
-		<form>
-			<div class="form-group">
-				<label for="classes">What Class Is This Book For?</label><br /> <select
-					name="classes" placeholder="Choose A Class">
-					<option value="" disabled selected hidden>Select A Class</option>
-				</select>
-			</div>
 
 			<div class="form-group">
 				<label for="book-title">Book Title</label><br /> <input type="text"
@@ -49,22 +42,20 @@
 					id="isbn" placeholder="ISBN">
 			</div>
 			<div class="form-group">
-				<label for="edition">Edition</label><br /> <input type="text"
-					name="edition" id="edition" placeholder="Edition">
+				<label for="author">Author(s)</label><br /> <input type="text"
+					name="author" id="author" placeholder="Author(s)">
 			</div>
 			<div class="form-group">
-				<label for="rental-price">Rental Price (per day)</label><br /> <input
-					type="text" name="rental-price" id="rental-price"
-					placeholder="$ per day">
+				<label for="edition">Edition</label><br /> <input type="text"
+					name="edition" id="edition" placeholder="Edition">
 			</div>
 			<div class="form-group">
 				<label for="post-description">Other Information:</label><br /> <input
 					type="text" name="post-description" id="post-description"
 					placeholder="Other Information: ">
 			</div>
-			<input type="submit" name="submit-post" class="btn btn-warning"
+			<input type="submit" name="submit-post" id="createPost" class="btn btn-warning"
 				value="Submit Posting">
-		</form>
 	</div>
 </body>
 </html>
