@@ -5,8 +5,6 @@
  */
 package edu.pitt.is1017;
 
-import java.sql.ResultSet;
-import java.util.HashMap;
 import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
