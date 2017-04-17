@@ -47,8 +47,9 @@ public class LoginServlet extends HttpServlet {
                
                 
 		if(loginSuccess){
-			out.println("success");
+			response.sendRedirect("userpage.html");
 		}else{
+			//needs work
 			out.println("fail");
 		}
                    
