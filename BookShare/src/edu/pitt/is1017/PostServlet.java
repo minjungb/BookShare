@@ -49,11 +49,12 @@ public class PostServlet extends HttpServlet {
 		String desc = request.getParameter("desc");
 		String funct = request.getParameter("funct");
 		
+		/*
 		Cookie[] cookies = request.getCookies();
 
-		String id = "1";
+		String id = null;
 		String username = null;
-		/*
+		
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equals("id")) {
 				id = cookie.getValue();
@@ -64,7 +65,7 @@ public class PostServlet extends HttpServlet {
 		}*/
 		
 		if (funct.equals("create")){
-			pf.createPost(id, title, isbn, author, edition, desc);
+			pf.createPost(title, isbn, author, edition, desc);
 			PrintWriter out = response.getWriter();
 			out.print("good");
 			

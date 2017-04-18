@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Table (name="post")
 public class Post{
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column (name="postID")
 	private int ID;
 
@@ -30,15 +30,8 @@ public class Post{
 	public Post() {
 		super();
 	} 
-	/*
-	public Post(int userID, String title, String isbn, String author, String edition, String desc) {
-		this.ID = userID;
-		this.title = title;
-		this.isbn = isbn;
-		this.author = author;
-		this.edition = edition;
-		this.desc = desc;
-	}*/
+
+	
 	public String getTitle() {
 		return this.title;
 	}
