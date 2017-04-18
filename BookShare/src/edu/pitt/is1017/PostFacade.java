@@ -39,14 +39,16 @@ public class PostFacade {
     	return posts;
     }
     
-    public void createPost(String title, String isbn, String author, String edition, String desc){
-    	//int userID = Integer.parseInt(id);
+    public void createPost(String id, String title, String isbn, String author, String edition, String desc){
+    	int userID = Integer.parseInt(id);
     	Post newPost = new Post();
+    	newPost.setID(userID);
     	newPost.setTitle(title);
     	newPost.setIsbn(isbn);
     	newPost.setAuthor(author);
     	newPost.setEdition(edition);
     	newPost.setDesc(desc);
+    	//Post newPost = new Post(userID, title, isbn, author, edition, desc);
     	em.persist(newPost);
     }
     
