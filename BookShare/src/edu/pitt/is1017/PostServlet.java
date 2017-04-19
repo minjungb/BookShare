@@ -48,12 +48,13 @@ public class PostServlet extends HttpServlet {
 		String edition = request.getParameter("edition");
 		String desc = request.getParameter("desc");
 		String funct = request.getParameter("funct");
+		String contact = request.getParameter("contact");
 		
 		Cookie[] cookies = request.getCookies();
 
-		String id = "1";
+		String id = null;
 		String username = null;
-		/*
+		
 		for (Cookie cookie : cookies) {
 			if (cookie.getName().equals("id")) {
 				id = cookie.getValue();
@@ -61,12 +62,13 @@ public class PostServlet extends HttpServlet {
 			if (cookie.getName().equals("username")) {
 				username = cookie.getValue();
 			}
-		}*/
+		}
+		//String id = "1";
 		
 		if (funct.equals("create")){
-			pf.createPost(id, title, isbn, author, edition, desc);
+			pf.createPost(id, title, isbn, author, edition, desc, contact);
 			PrintWriter out = response.getWriter();
-			out.print("good");
+			out.print("Your post has been submitted.");
 			
 		}else if(funct.equals("fill")){
 			count = pf.getPostCount();
@@ -83,6 +85,7 @@ public class PostServlet extends HttpServlet {
 				String pAuthor = p.getAuthor();
 				String pEdition = p.getEdition();
 				String pDescription = p.getDesc();
+				String pContact = p.getContact();
 				if(pTitle == null){
 					pTitle = "";
 				}
@@ -98,7 +101,9 @@ public class PostServlet extends HttpServlet {
 				if(pDescription == null){
 					pDescription = "";
 				}
-				
+				if(pContact == null){
+					pContact = "";
+				}
 				JsonObjectBuilder postBuilder = Json.createObjectBuilder();
 				JsonObject postJson = postBuilder.add("id", pID)
 				.add("title", pTitle)
@@ -106,6 +111,7 @@ public class PostServlet extends HttpServlet {
 				.add("author", pAuthor)
 				.add("edition", pEdition)
 				.add("description", pDescription)
+				.add("contact", pContact)
 				.build();
 				
 				arrayBuilder.add(postJson);

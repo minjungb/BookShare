@@ -12,12 +12,13 @@ $(document).ready(function(){
 			var json =  result;
 			var num = json.count;
 			for(i = 0; i < num; i++) {
-				var html= '<div class="post">' +
+				var html= '<div class="post col-md-6 col-md-offset-3">' +
 					  			  '<h3 id="title'+(num-i)+'">Book title</h3>' +
 					  			  '<p>ISBN: <span id="isbn'+(num-i)+'"></span></p>' +
 					  			  '<p>Author: <span id="author'+(num-i)+'"></span></p>' +
 					  			  '<p>Edition: <span id="edition'+(num-i)+'"></span></p>' +
 					  			  '<p>Description: <span id="desc'+(num-i)+'"></span></p>' +
+					  			  '<p>Contact Info: <span id="contact'+(num-i)+'"></span></p>' +
 					  	  '</div>';
 				$('#postings').append(html);
 			}
@@ -29,12 +30,14 @@ $(document).ready(function(){
 				var author = '#author' + (num-i);
 				var edition = '#edition' + (num-i);
 				var desc = '#desc' + (num-i);
+				var contact = '#contact' + (num-i);
 				
 				$(title).html(posts[i].title.toString());
 				$(isbn).html(posts[i].isbn.toString());
 				$(author).html(posts[i].author.toString());
 				$(edition).html(posts[i].edition.toString());
 				$(desc).html(posts[i].description.toString());
+				$(contact).html(posts[i].contact.toString());
 			}
 			
 		},

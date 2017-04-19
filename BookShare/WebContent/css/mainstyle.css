@@ -7,3 +7,8 @@ body{
 #content{
 	margin: 100px auto;
 }
+.post{
+	border: 1px solid grey;
+	background: #FFFFFF;
+	margin-bottom: 20px
+}
