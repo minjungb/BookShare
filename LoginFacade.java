@@ -5,6 +5,7 @@
  */
 package edu.pitt.is1017;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -15,28 +16,53 @@ import javax.persistence.Query;
 public class LoginFacade {
     @PersistenceContext(unitName="IS1017")
     private EntityManager em;
+    private String username;
     
     public LoginFacade(){
         super();
     }
     
     public boolean checkLogin(String username, String password){
-        Query check = em.createQuery("SELECT username, password FROM user WHERE username = :login AND password = :password LIMIT 1;");
-        check.setParameter("login", username);
-        check.setParameter("password", password);
+        List<Login> result;
+        Query query = em.createQuery("SELECT u FROM Login u WHERE u.username= " + "'" + username + "'" + " AND u.password= " + "'" + password + "'");     
         try{
-            Login loginResult = (Login)check.getResultList();
-            if(loginResult != null){
-                return true;
-            }
+            result = query.getResultList();
+            
         }catch(NoResultException e){
-            System.out.println(check.toString());
+            System.out.println(query.toString());
             return false;
+            
+            
         }
         
-        
-        
+        if(result.size() == 1){
+            System.out.println("MATCH");
+            return true;
+        }
+        System.out.println("NO MATCH");
         return false;
+        
     }
+    
+    public String getUserID() {
+		String userID = null;
+		Query query = em.createQuery("select p from Login p");
+		List<Login> users = (List<Login>) query.getResultList();
+
+		for (Login u : users) {
+			if (u.getUser().equals(username)) {
+				userID = Integer.toString(u.getID());
+				return userID;
+			}
+		}
+		return userID;
+	}
+
+	public String setUserName(String username) {
+		this.username = username;
+		return username;
+	}
+
+
     
 }
